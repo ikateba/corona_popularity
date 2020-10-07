@@ -1,5 +1,11 @@
 # corona_popularity
 
+## How the application works
+The application make use of the news api that's provided by the end point  url = ('http://newsapi.org/v2/top-headlines?'
+           'country=us&'
+           'apiKey=*')
+ <p> You can register and get apiKey to use instead of the star, currently you can use the one given in codes to fetch articles as well.   
+
 ##### How to Run the application
 
 <p>Make sure you have installed hadoop, hbase and python3. 
