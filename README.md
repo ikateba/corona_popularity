@@ -6,7 +6,7 @@ The application make use of the news api that's provided by the end point  url =
            'apiKey=*')
  <p> You can register and get apiKey to use instead of the star, currently you can use the one given in codes to fetch articles as well.   
 
-##### How to Run the application
+## How to Run the application
 
 <p>Make sure you have installed hadoop, hbase and python3. 
 <p>Create table 'corona' in hbase by using shell command:  create 'corona', 'frequency'
