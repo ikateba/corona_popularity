@@ -2,6 +2,9 @@ import requests
 import socket
 import sys
 
+from kafka import KafkaProducer
+producer = KafkaProducer(bootstrap_servers='localhost:9092')
+
 def get_news():
     url = ('http://newsapi.org/v2/top-headlines?'
            'country=us&'
@@ -21,6 +24,12 @@ def send_news_to_spark(articles, tcp_connection):
             print("Error: %s" % e)
 
 
+def send_to_consumer(articles):
+    for article in articles:
+        full_text = article['content']
+        if type(full_text) is str:
+            producer.send('corona_news', str.encode(full_text))
+
 TCP_IP = "localhost"
 TCP_PORT = 9999
 conn = None
@@ -34,4 +43,4 @@ i = 1
 while i == 1:
     resp = get_news()
     send_news_to_spark(resp, conn)
-
+    send_to_consumer(resp)
