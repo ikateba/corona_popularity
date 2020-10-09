@@ -13,3 +13,8 @@ The application make use of the news api that's provided by the end point  url =
 <p>Then run the news.py program like any other python programs
 <p>Finally, Submit the news_app.py to hadoop by command "spark-submit news_app.py". 
 <p>Scan the table 'corona' on hbase shell to see new records.  
+           
+           
+ ## How to use the Apache Kafka
+ <p>You have to install kafka-python client using command "pip install kafka-python"
+ <p> The Kafka consumer is already in news.py, so the only thing needed is to run the producer.py normally and the news will be printed on screen as they are received by the consumer.
